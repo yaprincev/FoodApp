@@ -16,6 +16,9 @@
 		823E910F2B51700600B8F31D /* FoodAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E910E2B51700600B8F31D /* FoodAppUITestsLaunchTests.swift */; };
 		823E91212B51760C00B8F31D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E911F2B51760C00B8F31D /* MainViewController.swift */; };
 		823E91222B51760C00B8F31D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823E91202B51760C00B8F31D /* MainViewController.xib */; };
+		823E91252B51775400B8F31D /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E91242B51775400B8F31D /* MainPresenter.swift */; };
+		823E91292B51874D00B8F31D /* PromoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E91272B51874D00B8F31D /* PromoCollectionViewCell.swift */; };
+		823E912A2B51874D00B8F31D /* PromoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823E91282B51874D00B8F31D /* PromoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		823E910E2B51700600B8F31D /* FoodAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		823E911F2B51760C00B8F31D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		823E91202B51760C00B8F31D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		823E91242B51775400B8F31D /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		823E91272B51874D00B8F31D /* PromoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCollectionViewCell.swift; sourceTree = "<group>"; };
+		823E91282B51874D00B8F31D /* PromoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		823E911D2B51718800B8F31D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				823E91262B51870300B8F31D /* Cell */,
 				823E911F2B51760C00B8F31D /* MainViewController.swift */,
 				823E91202B51760C00B8F31D /* MainViewController.xib */,
 			);
@@ -155,8 +162,18 @@
 		823E911E2B51718F00B8F31D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				823E91242B51775400B8F31D /* MainPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		823E91262B51870300B8F31D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				823E91272B51874D00B8F31D /* PromoCollectionViewCell.swift */,
+				823E91282B51874D00B8F31D /* PromoCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823E912A2B51874D00B8F31D /* PromoCollectionViewCell.xib in Resources */,
 				823E90F82B51700600B8F31D /* LaunchScreen.storyboard in Resources */,
 				823E91222B51760C00B8F31D /* MainViewController.xib in Resources */,
 				823E90F52B51700600B8F31D /* Assets.xcassets in Resources */,
@@ -291,8 +309,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				823E91212B51760C00B8F31D /* MainViewController.swift in Sources */,
+				823E91292B51874D00B8F31D /* PromoCollectionViewCell.swift in Sources */,
 				823E90EC2B51700100B8F31D /* AppDelegate.swift in Sources */,
 				823E90EE2B51700100B8F31D /* SceneDelegate.swift in Sources */,
+				823E91252B51775400B8F31D /* MainPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +485,6 @@
 				INFOPLIST_FILE = FoodApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,7 +511,6 @@
 				INFOPLIST_FILE = FoodApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
