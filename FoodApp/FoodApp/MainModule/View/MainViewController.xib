@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FoodApp" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="sFx-Xw-REx" id="YAG-qg-Tgo"/>
+                <outlet property="promoCollection" destination="y3E-Ty-RRZ" id="eiY-sH-neJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,11 +29,10 @@
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-Ty-RRZ">
-                    <rect key="frame" x="16" y="163" width="616" height="112"/>
+                    <rect key="frame" x="16" y="163" width="377" height="112"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="112" id="aEz-IT-CJQ"/>
-                        <constraint firstAttribute="width" constant="616" id="k04-bu-ILQ"/>
+                        <constraint firstAttribute="height" constant="112" id="9Nt-76-OZq"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ftB-4l-3eu">
                         <size key="itemSize" width="128" height="128"/>
@@ -46,11 +46,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="sFx-Xw-REx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="d7N-DG-I0R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y3E-Ty-RRZ" secondAttribute="trailing" id="edY-ic-yhP"/>
                 <constraint firstItem="y3E-Ty-RRZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jh8-Ff-6wR"/>
                 <constraint firstItem="y3E-Ty-RRZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="104" id="kmo-zZ-50B"/>
                 <constraint firstItem="sFx-Xw-REx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="xgX-g9-0Bg"/>
             </constraints>
-            <point key="canvasLocation" x="58" y="21"/>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>

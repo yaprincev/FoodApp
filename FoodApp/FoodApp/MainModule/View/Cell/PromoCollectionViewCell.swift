@@ -13,7 +13,12 @@ class PromoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageCell.image = UIImage(
+        imageCell.layer.cornerRadius = 20
+        imageCell.clipsToBounds = true
+        imageCell.translatesAutoresizingMaskIntoConstraints = false
+     //   imageCell.frame = CGRect(origin: imageCell.frame.origin, size: CGSize(width: 350, height: 100))
+     
     }
+    
 
 }
