@@ -15,7 +15,8 @@
                 <outlet property="promoCollection" destination="y3E-Ty-RRZ" id="eiY-sH-neJ"/>
                 <outlet property="tableView" destination="FUJ-fC-IGT" id="YMf-LK-qxG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="yOutletPromoCollection" destination="GD4-jK-iU9" id="2K4-G3-8za"/>
+                <outlet property="yOutletChoiseCollection" destination="GD4-jK-iU9" id="xbX-88-4sV"/>
+                <outlet property="yOutletTableView" destination="R2R-Jh-0Sv" id="zTN-b8-HUZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

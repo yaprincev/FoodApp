@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var yOutletChoiseCollection: NSLayoutConstraint!
+    @IBOutlet weak var yOutletTableView: NSLayoutConstraint!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var promoCollection: UICollectionView!
@@ -22,7 +23,7 @@ class MainViewController: UIViewController {
     
     let images = ["Promo1", "Promo3"]
     let choose = ["Pizza", "Combo", "Desert", "Drinks"]
-
+    var isScrollingDown = false
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -31,6 +32,7 @@ class MainViewController: UIViewController {
         configurePromoCollection()
         configureAppearance()
         let collectionViewTop = yOutletChoiseCollection.constant
+        
         
     }
 
@@ -89,17 +91,49 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
      
     
-
-/*extension MainViewController: UIScrollViewDelegate {
+extension MainViewController: UIScrollViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == tableView {
-            let yoffset = scrollView.contentOffset.y
-            if yoffset > 0 {
-                yOutletChoiseCollection = max(collectionViewTop - yoffset, 0)
+            let offsetY = scrollView.contentOffset.y
+
+            if offsetY > 0 {
+                // Скролл вниз
+                if !isScrollingDown {
+                    isScrollingDown = true
+                    updateConstraintsForScrollingDown()
+                }
+            } else {
+                // Скролл вверх
+                if isScrollingDown {
+                    isScrollingDown = false
+                    updateConstraintsForScrollingUp()
+                }
             }
         }
+    
+    private func updateConstraintsForScrollingDown() {
+        UIView.animate(withDuration: 0.3) {
+            // Обновите констрейнты для второго коллекшн вью (двигайте его вверх)
+            self.yOutletChoiseCollection.constant = 60
+            self.yOutletTableView.constant = 116
+            // Затушите первый коллекшн вью (может потребоваться настройка прозрачности)
+            self.promoCollection.alpha = 0.0
+
+            // Поменяйте layoutIfNeeded для применения изменений
+            self.view.layoutIfNeeded()
+        }
     }
-}*/
+// TODO: Сделать константы
+    private func updateConstraintsForScrollingUp() {
+        UIView.animate(withDuration: 0.3) {
+            // Верните констрейнты в исходное состояние
+            self.yOutletChoiseCollection.constant = 196
+            self.yOutletTableView.constant = 252
+            self.promoCollection.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }
+    }
+}
 
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
