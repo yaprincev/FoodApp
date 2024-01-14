@@ -13,12 +13,14 @@ class PromoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureAppearance()
+    }
+}
+
+extension PromoCollectionViewCell {
+    func configureAppearance() {
         imageCell.layer.cornerRadius = 20
         imageCell.clipsToBounds = true
         imageCell.translatesAutoresizingMaskIntoConstraints = false
-     //   imageCell.frame = CGRect(origin: imageCell.frame.origin, size: CGSize(width: 350, height: 100))
-     
     }
-    
-
 }

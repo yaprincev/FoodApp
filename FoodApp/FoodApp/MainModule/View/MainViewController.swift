@@ -8,20 +8,29 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var yOutletPromoCollection: NSLayoutConstraint!
+    @IBOutlet weak var yOutletChoiseCollection: NSLayoutConstraint!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var promoCollection: UICollectionView!
+    @IBOutlet weak var choiseCollection: UICollectionView!
+    
+    
+    enum collections {
+        case promoCollection
+        case choiseCollection
+    }
     
     let images = ["Promo1", "Promo3"]
+    let choose = ["Pizza", "Combo", "Desert", "Drinks"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
+        configureChoiseCollection()
         configurePromoCollection()
         configureAppearance()
+        let collectionViewTop = yOutletChoiseCollection.constant
         
     }
 
@@ -31,35 +40,63 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        if collectionView == self.promoCollection {
+            return images.count
+        } else {
+            return choose.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = promoCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PromoCollectionViewCell
-        cell.imageCell.image = UIImage(named: images[indexPath.row])
-        return cell
+        if collectionView == self.promoCollection {
+            let cell = promoCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PromoCollectionViewCell
+            cell.imageCell.image = UIImage(named: images[indexPath.row])
+            return cell
+        } else {
+            let cell = choiseCollection.dequeueReusableCell(withReuseIdentifier: "ChoiceCell", for: indexPath) as! ChoiseCollectionViewCell
+            cell.choiseButton.setTitle(choose[indexPath.row], for: .normal)
+            cell.choiseButton.setTitle(choose[indexPath.row], for: .highlighted)
+            return cell
+        }
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 112)
-        
+        if collectionView == promoCollection {
+            return CGSize(width: 350, height: 112)
+        } else {
+            return CGSize(width: 88, height: 32)
+        }
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-}
     
+    
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+         if collectionView == promoCollection {
+             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+         } else {
+             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+         }
+     
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+         if collectionView == promoCollection {
+             return 10
+         } else {
+             return 10
+         }
+         
+     }
+     
+}
+     
+    
+
 /*extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == tableView {
             let yoffset = scrollView.contentOffset.y
-            print(yOutletPromoCollection.constant)
-            yOutletPromoCollection.constant = 0
-            print(yOutletPromoCollection.constant)
+            if yoffset > 0 {
+                yOutletChoiseCollection = max(collectionViewTop - yoffset, 0)
+            }
         }
     }
 }*/
@@ -76,9 +113,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-
-    
 }
+
+
 
 extension MainViewController {
     
@@ -102,6 +139,16 @@ extension MainViewController {
         if let flowLayout = promoCollection.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
         }
-        var initialCol = promoCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).constant
+    }
+    
+    
+    func configureChoiseCollection() {
+        choiseCollection.register(UINib(nibName: "\(ChoiseCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "ChoiceCell")
+        choiseCollection.dataSource = self
+        choiseCollection.delegate = self
+        choiseCollection.showsHorizontalScrollIndicator = false
+        if let flowLayout = choiseCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+        }
     }
 }
