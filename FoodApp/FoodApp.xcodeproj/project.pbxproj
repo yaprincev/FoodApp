@@ -23,6 +23,8 @@
 		823E913B2B52FF7900B8F31D /* ChoiseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823E91392B52FF7900B8F31D /* ChoiseCollectionViewCell.xib */; };
 		823E913F2B5353EA00B8F31D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E913D2B5353EA00B8F31D /* TableViewCell.swift */; };
 		823E91402B5353EA00B8F31D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823E913E2B5353EA00B8F31D /* TableViewCell.xib */; };
+		823E91442B53FDA200B8F31D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E91432B53FDA200B8F31D /* NetworkService.swift */; };
+		823E91462B53FDC600B8F31D /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E91452B53FDC600B8F31D /* Dish.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		823E91392B52FF7900B8F31D /* ChoiseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiseCollectionViewCell.xib; sourceTree = "<group>"; };
 		823E913D2B5353EA00B8F31D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		823E913E2B5353EA00B8F31D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		823E91432B53FDA200B8F31D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		823E91452B53FDC600B8F31D /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		823E911B2B51715B00B8F31D /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				823E91412B53FD7A00B8F31D /* ServiceLayer */,
 				823E911E2B51718F00B8F31D /* Presenter */,
 				823E911D2B51718800B8F31D /* View */,
 				823E911C2B51717F00B8F31D /* Model */,
@@ -153,6 +158,7 @@
 		823E911C2B51717F00B8F31D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				823E91452B53FDC600B8F31D /* Dish.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				823E913E2B5353EA00B8F31D /* TableViewCell.xib */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		823E91412B53FD7A00B8F31D /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				823E91432B53FDA200B8F31D /* NetworkService.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,9 +362,11 @@
 			files = (
 				823E91212B51760C00B8F31D /* MainViewController.swift in Sources */,
 				823E91292B51874D00B8F31D /* PromoCollectionViewCell.swift in Sources */,
+				823E91442B53FDA200B8F31D /* NetworkService.swift in Sources */,
 				823E90EC2B51700100B8F31D /* AppDelegate.swift in Sources */,
 				823E913A2B52FF7900B8F31D /* ChoiseCollectionViewCell.swift in Sources */,
 				823E90EE2B51700100B8F31D /* SceneDelegate.swift in Sources */,
+				823E91462B53FDC600B8F31D /* Dish.swift in Sources */,
 				823E913F2B5353EA00B8F31D /* TableViewCell.swift in Sources */,
 				823E91252B51775400B8F31D /* MainPresenter.swift in Sources */,
 			);
