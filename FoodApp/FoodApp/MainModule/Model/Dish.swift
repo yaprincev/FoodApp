@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Dish: Decodable{
+struct DishResponse: Codable{
+    var meals: [Dish]
+}
+
+struct Dish: Codable {
     var strMeal: String
     var strMealThumb: String
     var idMeal: String

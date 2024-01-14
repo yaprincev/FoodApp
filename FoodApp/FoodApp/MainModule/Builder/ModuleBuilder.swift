@@ -7,12 +7,8 @@
 
 import Foundation
 import UIKit
-protocol AssemblyBuilderProtocol {
-    func createMainModule() -> UIViewController
-}
 
-
-class AssemblyBuilder: AssemblyBuilderProtocol {
+class AssemblyBuilder {
     func createMainModule() -> UIViewController {
         let view = MainViewController()
         let networkService = NetrworkService()

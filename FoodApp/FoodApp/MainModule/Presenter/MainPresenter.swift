@@ -14,27 +14,23 @@ protocol MainViewProtocol: AnyObject { // output
 
 protocol MainViewPresenterProtocol: AnyObject { // input
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
-    func getDishes(forCategory category: String)
+    func getDishes()
     var dishes: [Dish]? { get set }
-    var categories: [String] { get set}
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var dishes: [Dish]?
-    var categories: [String] = ["Beef", "Chicken", "Desert", "Pasta", "Vegetarian", "Breakfast"]
     
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
         self.networkService = networkService
-        categories.forEach { category in
-            getDishes(forCategory: category)
-        }
+        getDishes()
     }
     
-    func getDishes(forCategory category: String) {
-        networkService.getDishes(dishCategory: category) { [weak self] result in
+    func getDishes() {
+        networkService.getDishes() { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let dishes):

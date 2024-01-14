@@ -16,10 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var choiseCollection: UICollectionView!
     
     
-    enum collections {
-        case promoCollection
-        case choiseCollection
-    }
+    var presenter: MainViewPresenterProtocol!
     
     let images = ["Promo1", "Promo3"]
     let choose = ["Pizza", "Combo", "Desert", "Drinks"]
@@ -112,14 +109,12 @@ extension MainViewController: UIScrollViewDelegate {
         }
     
     private func updateConstraintsForScrollingDown() {
+        UIView.animate(withDuration: 0.2) {
+            self.promoCollection.alpha = 0.0
+        }
         UIView.animate(withDuration: 0.3) {
-            // Обновите констрейнты для второго коллекшн вью (двигайте его вверх)
             self.yOutletChoiseCollection.constant = 60
             self.yOutletTableView.constant = 116
-            // Затушите первый коллекшн вью (может потребоваться настройка прозрачности)
-            self.promoCollection.alpha = 0.0
-
-            // Поменяйте layoutIfNeeded для применения изменений
             self.view.layoutIfNeeded()
         }
     }
@@ -138,12 +133,13 @@ extension MainViewController: UIScrollViewDelegate {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        print(presenter.dishes?.count ?? 0)
+        return presenter.dishes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "2"
+        cell.textLabel?.text = presenter.dishes?[indexPath.row].strMealThumb
         return cell
     }
     

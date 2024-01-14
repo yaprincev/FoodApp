@@ -18,10 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mvc = MainViewController()
-        window?.rootViewController = mvc
+        let mvc = AssemblyBuilder().createMainModule()
+        let nav = UINavigationController(rootViewController: mvc)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

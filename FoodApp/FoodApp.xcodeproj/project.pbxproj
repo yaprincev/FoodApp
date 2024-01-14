@@ -149,6 +149,7 @@
 		823E911B2B51715B00B8F31D /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				823E914A2B546B7B00B8F31D /* Extensions */,
 				823E91472B540A1900B8F31D /* Builder */,
 				823E91412B53FD7A00B8F31D /* ServiceLayer */,
 				823E911E2B51718F00B8F31D /* Presenter */,
@@ -235,6 +236,13 @@
 				823E91482B540A2B00B8F31D /* ModuleBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		823E914A2B546B7B00B8F31D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
