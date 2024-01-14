@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         configureChoiseCollection()
         configurePromoCollection()
         configureAppearance()
@@ -138,8 +139,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = presenter.dishes?[indexPath.row].strMealThumb
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
+        cell.dishID.text = presenter.dishes?[indexPath.row].idMeal
+        cell.dishName.text = presenter.dishes?[indexPath.row].strMeal
+        if let imageURL = presenter.dishes?[indexPath.row].strMealThumb, let url = URL(string: imageURL) {
+            cell.dishImage.loadImage(from: url)
+        }
         return cell
     }
     
