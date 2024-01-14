@@ -186,3 +186,17 @@ extension MainViewController {
         }
     }
 }
+
+extension MainViewController: MainViewProtocol {
+    func success() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}

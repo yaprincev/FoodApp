@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getComments(dishCategory: String, completion: @escaping (Result<[Dish]?, Error>) -> Void)
+    func getDishes(dishCategory: String, completion: @escaping (Result<[Dish]?, Error>) -> Void)
 }
 
 
@@ -20,7 +20,7 @@ class NetrworkService: NetworkServiceProtocol {
     let session = URLSession.shared
     
     
-    func getComments(dishCategory: String, completion: @escaping (Result<[Dish]?, Error>) -> Void) {
+    func getDishes(dishCategory: String, completion: @escaping (Result<[Dish]?, Error>) -> Void) {
         guard let url = URL(string: "www.themealdb.com/api/json/v1/1/filter.php?c=\(dishCategory)") else { return }
         session.dataTask(with: url) { data, response, error in
             if let error = error {
