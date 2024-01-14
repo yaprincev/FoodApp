@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var promoCollection: UICollectionView!
     @IBOutlet weak var choiseCollection: UICollectionView!
-    
+    @IBOutlet weak var tabBar: UITabBar!
     
     var presenter: MainViewPresenterProtocol!
     
@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
         configureChoiseCollection()
         configurePromoCollection()
         configureAppearance()
-        let collectionViewTop = yOutletChoiseCollection.constant
-        
+        configureTabBar()
+
         
     }
 
@@ -148,6 +148,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 172
+    }
 }
 
 
@@ -185,6 +188,19 @@ extension MainViewController {
         if let flowLayout = choiseCollection.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
         }
+    }
+    
+    func configureTabBar() {
+        var menuTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBMenu"), selectedImage: UIImage(named: "TBMenu"))
+        let contactTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBContact"), selectedImage: nil)
+        let profileTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBProfile"), selectedImage: nil)
+        let basketTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBBasket"), selectedImage: nil)
+        tabBar.items?.removeAll()
+        tabBar.items?.append(menuTabBar)
+        tabBar.items?.append(contactTabBar)
+        tabBar.items?.append(profileTabBar)
+        tabBar.items?.append(basketTabBar)
+        tabBar.tintColor = UIColor(red: 253/255, green: 58/255, blue: 105/255, alpha: 1.0)
     }
 }
 

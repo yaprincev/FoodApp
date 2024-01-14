@@ -13,6 +13,7 @@
                 <outlet property="button" destination="sFx-Xw-REx" id="YAG-qg-Tgo"/>
                 <outlet property="choiseCollection" destination="Qdm-C7-e9w" id="BGX-tP-2QD"/>
                 <outlet property="promoCollection" destination="y3E-Ty-RRZ" id="eiY-sH-neJ"/>
+                <outlet property="tabBar" destination="AdP-1P-KcU" id="67f-in-Mcx"/>
                 <outlet property="tableView" destination="FUJ-fC-IGT" id="YMf-LK-qxG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yOutletChoiseCollection" destination="GD4-jK-iU9" id="xbX-88-4sV"/>
@@ -62,6 +63,15 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdP-1P-KcU">
+                    <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="sjF-rC-sc2"/>
+                        <tabBarItem systemItem="more" id="7q5-51-8Be"/>
+                    </items>
+                </tabBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
