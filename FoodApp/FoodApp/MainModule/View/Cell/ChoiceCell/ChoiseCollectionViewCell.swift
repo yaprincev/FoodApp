@@ -8,13 +8,24 @@
 import UIKit
 
 
-
 class ChoiseCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Views
+    
     @IBOutlet weak var choiseButton: UIButton!
+    
+    // MARK: - Events
+    
     var buttonTapHandler: (() -> Void)?
+    
+    // MARK: - UICollectionViewCell
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    // MARK: - Actions
+    
     @IBAction func choiseButtonAction(_ sender: Any) {
         buttonTapHandler?()
     }

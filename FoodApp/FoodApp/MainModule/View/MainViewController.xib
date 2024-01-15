@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FoodApp" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="sFx-Xw-REx" id="YAG-qg-Tgo"/>
                 <outlet property="choiseCollection" destination="Qdm-C7-e9w" id="BGX-tP-2QD"/>
+                <outlet property="cityButton" destination="sFx-Xw-REx" id="f4s-20-SeS"/>
                 <outlet property="promoCollection" destination="y3E-Ty-RRZ" id="eiY-sH-neJ"/>
                 <outlet property="tabBar" destination="AdP-1P-KcU" id="67f-in-Mcx"/>
                 <outlet property="tableView" destination="FUJ-fC-IGT" id="YMf-LK-qxG"/>
@@ -32,9 +32,6 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                    <connections>
-                        <action selector="but:" destination="-1" eventType="touchUpInside" id="acC-8s-Ny5"/>
-                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-Ty-RRZ">
                     <rect key="frame" x="16" y="119" width="377" height="112"/>

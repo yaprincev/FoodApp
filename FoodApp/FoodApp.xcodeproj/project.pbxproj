@@ -126,8 +126,6 @@
 				823E911B2B51715B00B8F31D /* MainModule */,
 				823E90EB2B51700100B8F31D /* AppDelegate.swift */,
 				823E90ED2B51700100B8F31D /* SceneDelegate.swift */,
-				823E90F42B51700600B8F31D /* Assets.xcassets */,
-				823E90F62B51700600B8F31D /* LaunchScreen.storyboard */,
 				823E90F92B51700600B8F31D /* Info.plist */,
 			);
 			path = FoodApp;
@@ -153,6 +151,7 @@
 		823E911B2B51715B00B8F31D /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				823E91622B551DB400B8F31D /* Aplication */,
 				823E914A2B546B7B00B8F31D /* ImageLoader */,
 				823E91472B540A1900B8F31D /* Builder */,
 				823E91412B53FD7A00B8F31D /* ServiceLayer */,
@@ -249,6 +248,15 @@
 				823E914B2B546BFC00B8F31D /* UiImageViewExtension.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		823E91622B551DB400B8F31D /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				823E90F42B51700600B8F31D /* Assets.xcassets */,
+				823E90F62B51700600B8F31D /* LaunchScreen.storyboard */,
+			);
+			path = Aplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Model
+ 
 struct DishResponse: Codable{
     var meals: [Dish]
 }

@@ -9,11 +9,19 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
+    // MARK: - Constants
+    
+    static let identifier = "CustomTableViewCell"
+    
+    
+    // MARK: - Views
+    
     @IBOutlet weak var dishImage: UIImageView!
     @IBOutlet weak var dishName: UILabel!
     @IBOutlet weak var dishID: UILabel!
     @IBOutlet weak var priceButton: UIButton!
-    static let identifier = "CustomTableViewCell"
+    
+    // MARK: - UITableViewCell
     
     static func nib() -> UINib {
         return UINib(nibName: "CustomTableViewCell", bundle: nil)
@@ -21,6 +29,20 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureAppearance()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+}
+
+// MARK: - Private Methods
+
+private extension CustomTableViewCell {
+    
+    func configureAppearance() {
         dishName.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight(600))
         dishName.textColor = UIColor(red: 34/255, green: 40/255, blue: 49/255, alpha: 1.0)
         dishID.text = "Dish ID: "
@@ -36,18 +58,8 @@ class CustomTableViewCell: UITableViewCell {
         let price = randomPrice(in: 200...350)
         priceButton.setTitle(price, for: .normal)
         priceButton.setTitle(price, for: .highlighted)
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-}
-
-extension CustomTableViewCell {
     func randomPrice(in range: ClosedRange<Int>) -> String {
         return "от " + String(Int.random(in: range)) + " р"
     }

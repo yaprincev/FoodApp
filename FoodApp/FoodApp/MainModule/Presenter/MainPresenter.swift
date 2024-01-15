@@ -7,16 +7,25 @@
 
 import Foundation
 
-protocol MainViewProtocol: AnyObject { // output
+// MARK: - View Protocol
+
+
+protocol MainViewProtocol: AnyObject {
     func success()
     func failure(error: Error)
 }
+
+// MARK: - Presenter protocol
+
 
 protocol MainViewPresenterProtocol: AnyObject { // input
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
     func getDishes()
     var dishes: [Dish]? { get set }
 }
+
+// MARK: - Presenter
+
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?

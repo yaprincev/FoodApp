@@ -8,22 +8,32 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var yOutletChoiseCollection: NSLayoutConstraint!
-    @IBOutlet weak var yOutletTableView: NSLayoutConstraint!
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var promoCollection: UICollectionView!
-    @IBOutlet weak var choiseCollection: UICollectionView!
-    @IBOutlet weak var tabBar: UITabBar!
     
-    var presenter: MainViewPresenterProtocol!
+    // MARK: - Constants
     
     let images = ["Promo1", "Promo3"]
     let dishCount = [0: 0, 1: 10, 2: 23]
     let choose = ["Beef", "Pork", "Lamb"]
     
+    // MARK: - Views
+    
+    @IBOutlet private weak var yOutletChoiseCollection: NSLayoutConstraint!
+    @IBOutlet private weak var yOutletTableView: NSLayoutConstraint!
+    @IBOutlet private weak var cityButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var promoCollection: UICollectionView!
+    @IBOutlet private weak var choiseCollection: UICollectionView!
+    @IBOutlet private weak var tabBar: UITabBar!
+    
+    // MARK: - Presenter
+    
+    var presenter: MainViewPresenterProtocol!
+    
+
     var isScrollingDown = false
     var tappedIndex = 0
+    
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +43,69 @@ class MainViewController: UIViewController {
         configureTabBar()
         configureTableView()
     }
+}
 
+// MARK: - Private Methods
 
-    @IBAction func but(_ sender: Any) {
-        button.backgroundColor = .red
+private extension MainViewController {
+    
+    func configureAppearance() {
+        cityButton.sizeToFit()
+        cityButton.titleLabel?.textColor = .black
+        cityButton.setTitle("Москва  ", for: .normal)
+        cityButton.setTitle("Москва  ", for: .highlighted)
+        
+        cityButton.setTitleColor(.black, for: .normal)
+
+        cityButton.setImage(UIImage(named: "Arrow1"), for: .normal)
+        cityButton.setImage(UIImage(named: "Arrow1"), for: .highlighted)
+        cityButton.semanticContentAttribute = .forceRightToLeft
+    }
+    
+    
+    func configurePromoCollection() {
+        promoCollection.register(UINib(nibName: "\(PromoCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "Cell")
+        promoCollection.dataSource = self
+        promoCollection.delegate = self
+        promoCollection.showsHorizontalScrollIndicator = false
+        if let flowLayout = promoCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+        }
+    }
+    
+    
+    func configureChoiseCollection() {
+        choiseCollection.register(UINib(nibName: "\(ChoiseCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "ChoiceCell")
+        choiseCollection.dataSource = self
+        choiseCollection.delegate = self
+        choiseCollection.showsHorizontalScrollIndicator = false
+        if let flowLayout = choiseCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+        }
+    }
+    
+    func configureTabBar() {
+        let menuTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBMenu"), selectedImage: UIImage(named: "TBMenu"))
+        let contactTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBContact"), selectedImage: nil)
+        let profileTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBProfile"), selectedImage: nil)
+        let basketTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBBasket"), selectedImage: nil)
+        tabBar.items?.removeAll()
+        tabBar.items?.append(menuTabBar)
+        tabBar.items?.append(contactTabBar)
+        tabBar.items?.append(profileTabBar)
+        tabBar.items?.append(basketTabBar)
+        tabBar.tintColor = UIColor(red: 253/255, green: 58/255, blue: 105/255, alpha: 1.0)
+    }
+    
+    func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
 }
+
+// MARK: - UICollectionView
+
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     
@@ -112,6 +179,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
      
 }
      
+// MARK: - UIScrollView
+
     
 extension MainViewController: UIScrollViewDelegate {
     
@@ -143,10 +212,8 @@ extension MainViewController: UIScrollViewDelegate {
             self.view.layoutIfNeeded()
         }
     }
-// TODO: Сделать константы
     private func updateConstraintsForScrollingUp() {
         UIView.animate(withDuration: 0.3) {
-            // Верните констрейнты в исходное состояние
             self.yOutletChoiseCollection.constant = 196
             self.yOutletTableView.constant = 252
             self.promoCollection.alpha = 1.0
@@ -155,10 +222,10 @@ extension MainViewController: UIScrollViewDelegate {
     }
 }
 
+// MARK: - UITableView
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(presenter.dishes?.count ?? 0)
         return presenter.dishes?.count ?? 0
     }
     
@@ -177,62 +244,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-
-
-extension MainViewController {
-    
-    func configureAppearance() {
-        button.sizeToFit()
-        button.titleLabel?.textColor = .black
-        button.setTitle("Москва", for: .normal)
-        button.setTitle("Москва", for: .highlighted)
-        
-        button.setTitleColor(.black, for: .normal)
-        button.setTitleColor(.black, for: .highlighted)
-    }
-    
-    
-    
-    func configurePromoCollection() {
-        promoCollection.register(UINib(nibName: "\(PromoCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "Cell")
-        promoCollection.dataSource = self
-        promoCollection.delegate = self
-        promoCollection.showsHorizontalScrollIndicator = false
-        if let flowLayout = promoCollection.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.scrollDirection = .horizontal
-        }
-    }
-    
-    
-    func configureChoiseCollection() {
-        choiseCollection.register(UINib(nibName: "\(ChoiseCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "ChoiceCell")
-        choiseCollection.dataSource = self
-        choiseCollection.delegate = self
-        choiseCollection.showsHorizontalScrollIndicator = false
-        if let flowLayout = choiseCollection.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.scrollDirection = .horizontal
-        }
-    }
-    
-    func configureTabBar() {
-        let menuTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBMenu"), selectedImage: UIImage(named: "TBMenu"))
-        let contactTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBContact"), selectedImage: nil)
-        let profileTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBProfile"), selectedImage: nil)
-        let basketTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBBasket"), selectedImage: nil)
-        tabBar.items?.removeAll()
-        tabBar.items?.append(menuTabBar)
-        tabBar.items?.append(contactTabBar)
-        tabBar.items?.append(profileTabBar)
-        tabBar.items?.append(basketTabBar)
-        tabBar.tintColor = UIColor(red: 253/255, green: 58/255, blue: 105/255, alpha: 1.0)
-    }
-    
-    func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
-    }
-}
+// MARK: - Presenter methods
 
 extension MainViewController: MainViewProtocol {
     func success() {
