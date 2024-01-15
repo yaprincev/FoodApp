@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B70BB019-ED4E-409C-AA57-4E912D042F42"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodApp/MainModule/View/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "89349EF1-8A00-4F7B-BDDE-5FE9C6A0B802"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -46,10 +30,10 @@
             filePath = "FoodApp/MainModule/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "updateConstraintsForScrollingUp()"
-            landmarkType = "7">
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "MainViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,9 +62,292 @@
             filePath = "FoodApp/MainModule/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "updateConstraintsForScrollingUp()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016 - 71531910c3de8a88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016 - 71531910c3de8aab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016 - 71531910c3de8a88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016 - 71531910c3de894e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "71FEEB15-F011-4D03-84BC-3CA37FB70016 - 71531910c3de8969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "150">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5AA9075-69DF-4CA3-A396-67B581CA2096"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/Cell/ChoiceCell/ChoiseCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "ChoiseCollectionViewCell"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  uuid = "D5AA9075-69DF-4CA3-A396-67B581CA2096 - b08001668a29d262"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodApp.ChoiseCollectionViewCell.configureTapButton() -&gt; ()"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/Cell/ChoiceCell/ChoiseCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "D5AA9075-69DF-4CA3-A396-67B581CA2096 - b08001668a29d203"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodApp.ChoiseCollectionViewCell.configureTapButton() -&gt; ()"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/Cell/ChoiceCell/ChoiseCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62F76536-D2EC-4A9C-99C0-5D558F4F4EFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62F76536-D2EC-4A9C-99C0-5D558F4F4EFA - 7c75611250fe141f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "3142">
+               </Location>
+               <Location
+                  uuid = "62F76536-D2EC-4A9C-99C0-5D558F4F4EFA - 71531910c3de8a88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  uuid = "62F76536-D2EC-4A9C-99C0-5D558F4F4EFA - 7c75611250fe17dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "3470">
+               </Location>
+               <Location
+                  uuid = "62F76536-D2EC-4A9C-99C0-5D558F4F4EFA - 71531910c3de894e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FoodApp.MainViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "FoodApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimaprincev/Desktop/FoodAppGit/FoodAppGit/FoodApp/FoodApp/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC607537-0534-48D7-A1A4-A101CCB8C080"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/Cell/ChoiceCell/ChoiseCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "choiseButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D501AB3C-4B39-45A1-AF40-670C27BB1B9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C29665F0-F749-4639-9559-F98432475472"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "MainViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B95E945-D485-4C9F-B92C-2C4203767A48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodApp/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

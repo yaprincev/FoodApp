@@ -1,5 +1,5 @@
 //
-//  ImageLoader.swift
+//  UiImageViewExtension.swift
 //  FoodApp
 //
 //  Created by Максим Япринцев on 14.01.2024.
@@ -19,4 +19,6 @@ extension UIImageView {
             }
         }
     }
+    
+    
 }

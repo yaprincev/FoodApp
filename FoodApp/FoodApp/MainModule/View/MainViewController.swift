@@ -19,25 +19,28 @@ class MainViewController: UIViewController {
     var presenter: MainViewPresenterProtocol!
     
     let images = ["Promo1", "Promo3"]
-    let choose = ["Pizza", "Combo", "Desert", "Drinks"]
+    let dishCount = [0: 0, 1: 10, 2: 23]
+    let choose = ["Beef", "Pork", "Lamb"]
+    
     var isScrollingDown = false
+    var tappedIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         configureChoiseCollection()
         configurePromoCollection()
         configureAppearance()
         configureTabBar()
-
-        
+        configureTableView()
     }
 
 
+    @IBAction func but(_ sender: Any) {
+        button.backgroundColor = .red
+    }
 }
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.promoCollection {
@@ -54,9 +57,30 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else {
             let cell = choiseCollection.dequeueReusableCell(withReuseIdentifier: "ChoiceCell", for: indexPath) as! ChoiseCollectionViewCell
-            cell.choiseButton.setTitle(choose[indexPath.row], for: .normal)
-            cell.choiseButton.setTitle(choose[indexPath.row], for: .highlighted)
-            return cell
+            if tappedIndex != indexPath.row {
+                cell.configureAppearance()
+                cell.choiseButton.setTitle(choose[indexPath.row], for: .normal)
+                cell.choiseButton.setTitle(choose[indexPath.row], for: .highlighted)
+                cell.buttonTapHandler = {
+                    let index = IndexPath(row: self.dishCount[indexPath.row] ?? 0, section: 0)
+                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                    self.tappedIndex = indexPath.row
+                    collectionView.reloadData()
+                }
+                return cell
+            } else {
+                cell.configureTappedAppearance()
+                cell.choiseButton.setTitle(choose[indexPath.row], for: .normal)
+                cell.choiseButton.setTitle(choose[indexPath.row], for: .highlighted)
+                cell.buttonTapHandler = {
+                    let index = IndexPath(row: self.dishCount[indexPath.row] ?? 0, section: 0)
+                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                    self.tappedIndex = indexPath.row
+                    collectionView.reloadData()
+                }
+                return cell
+            }
+            
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -140,7 +164,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
-        cell.dishID.text = presenter.dishes?[indexPath.row].idMeal
+        cell.dishID.text = (cell.dishID.text ?? "") + (presenter.dishes?[indexPath.row].idMeal ?? "")
         cell.dishName.text = presenter.dishes?[indexPath.row].strMeal
         if let imageURL = presenter.dishes?[indexPath.row].strMealThumb, let url = URL(string: imageURL) {
             cell.dishImage.loadImage(from: url)
@@ -191,7 +215,7 @@ extension MainViewController {
     }
     
     func configureTabBar() {
-        var menuTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBMenu"), selectedImage: UIImage(named: "TBMenu"))
+        let menuTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBMenu"), selectedImage: UIImage(named: "TBMenu"))
         let contactTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBContact"), selectedImage: nil)
         let profileTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBProfile"), selectedImage: nil)
         let basketTabBar = UITabBarItem(title: nil, image: UIImage(named: "TBBasket"), selectedImage: nil)
@@ -201,6 +225,12 @@ extension MainViewController {
         tabBar.items?.append(profileTabBar)
         tabBar.items?.append(basketTabBar)
         tabBar.tintColor = UIColor(red: 253/255, green: 58/255, blue: 105/255, alpha: 1.0)
+    }
+    
+    func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
 }
 

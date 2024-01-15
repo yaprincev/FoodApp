@@ -20,6 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="188" height="162"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <connections>
+                            <action selector="choiseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="9TS-3X-EBj"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -32,7 +35,7 @@
             </constraints>
             <size key="customSize" width="188" height="162"/>
             <connections>
-                <outlet property="choiseButton" destination="zt6-Ci-ITv" id="GgX-0Z-XHN"/>
+                <outlet property="choiseButton" destination="zt6-Ci-ITv" id="MPN-ke-Eb9"/>
             </connections>
             <point key="canvasLocation" x="161.83206106870227" y="59.859154929577471"/>
         </collectionViewCell>

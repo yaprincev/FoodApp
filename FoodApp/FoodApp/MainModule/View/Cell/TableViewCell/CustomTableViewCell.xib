@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-zk-OtV">
-                        <rect key="frame" x="36" y="35" width="132" height="132"/>
+                        <rect key="frame" x="36" y="18" width="132" height="132"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="132" id="2fZ-ne-3ny"/>
                             <constraint firstAttribute="width" constant="132" id="FA4-CB-D1g"/>
@@ -42,9 +42,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-49-M9D">
-                        <rect key="frame" x="264" y="124" width="87" height="32"/>
+                        <rect key="frame" x="264" y="124" width="95" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="87" id="LcR-Na-3dZ"/>
+                            <constraint firstAttribute="width" constant="95" id="8Da-3I-hjB"/>
                             <constraint firstAttribute="height" constant="32" id="pOd-DJ-d38"/>
                         </constraints>
                         <state key="normal" title="Button"/>
@@ -60,7 +60,7 @@
                     <constraint firstItem="Ac0-Y4-h6m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="aU6-u3-5vM"/>
                     <constraint firstItem="tMj-zk-OtV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="cru-Ji-aCF"/>
                     <constraint firstItem="7L5-nk-yvL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="180" id="nj3-6y-kja"/>
-                    <constraint firstItem="tMj-zk-OtV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="wpA-ca-KrG"/>
+                    <constraint firstItem="tMj-zk-OtV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="wpA-ca-KrG"/>
                     <constraint firstAttribute="trailing" secondItem="7L5-nk-yvL" secondAttribute="trailing" constant="5" id="ynL-Tc-o5l"/>
                 </constraints>
             </tableViewCellContentView>
