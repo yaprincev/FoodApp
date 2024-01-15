@@ -10,6 +10,11 @@
 Опционально:
 -	Offline-режим: т.е. в случае, если нет доступа к сети, показывать последние загруженные данные. (не реализован)
 
+### Стек:
+- Swift
+- UIKit
+- MVP
+
 ### Дизайн: 
 https://www.figma.com/file/QAV7uRlO2cI3lYjNOVIwmo/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-IOS-Copy?node-id=0%3A1
 
